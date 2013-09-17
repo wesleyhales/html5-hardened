@@ -2,13 +2,12 @@
 <html>
 	<head>
 		<!-- PAGE TITLE -->
-		<title>PureMVC_JS Native Demo - Text Reverser</title>
+		<title>PureMVC_JS Ifrane Demo - Text Reverser</title>
 		
 		<!-- CSS STYLES-->
 		<link rel="stylesheet" href="lib/css/bootstrap.min.css" />
 	</head>
-
-    <body>
+	<body>
 		<!-- INPUT FORM -->
 		<form class="well form-horizontal" id="textForm">
 			<fieldset>
@@ -37,6 +36,7 @@
 						<label class="checkbox">
 							<input type="checkbox" name="optionsCheckboxList1" value="option1">Reverse as I type
 						</label>
+
 						<label class="checkbox">
                             <input type="checkbox" id="sender" value="option1">Send to other window
                         </label>
@@ -88,20 +88,6 @@
 			// initialize the facade by retrieving an instance and calling startup
 			demo.ApplicationFacade.getInstance(demo.ApplicationFacade.NAME).startup();
 			});
-		</script>
-
-        <iframe src="iframe.html" name="iframe" sandbox="allow-scripts allow-same-origin" width="500" height="300" ></iframe>
-	</body>
-		<script>
-
- var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
-        var eventer = window[eventMethod];
-        var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
-        var that = this; 
-        eventer(messageEvent,function(e) {
-         console.log('recived msg:\n',e.data);
-         that.demo.view.mediator.IFrameMediator.sendNotification( demo.AppConstants.RECIVE, "pie" );
-        },false);
 		</script>
 	</body>
 </html>

@@ -16,6 +16,16 @@ window.demo=
 		/**
 		 * A notification that that
 		 */
-		PALINDROME_DETECTED: 'palindromeDetected'
+		PALINDROME_DETECTED: 'palindromeDetected',
+
+        /**
+		 * A notification that that
+		 */
+		IFRAME : 'iframe',
+
+        SEND : 'send',
+
+        RECIVE : 'recive'
+
 	}
 };
