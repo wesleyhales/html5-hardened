@@ -9,13 +9,15 @@ puremvc.define
 		name: 'demo.view.mediator.IFrameMediator',
 		parent: puremvc.Mediator
 	},
-
+	
 	// INSTANCE MEMBERS
 	{
 		/** @override */
 		listNotificationInterests: function ()
 		{
 			return [
+					demo.AppConstants.PALINDROME_DETECTED,
+					demo.AppConstants.RECIVE,
 					demo.AppConstants.SEND
 					]
 		},
@@ -26,17 +28,19 @@ puremvc.define
 			switch ( note.getName() )
 			{
 				case demo.AppConstants.SEND:
-                     console.log('recived from iframe \n' + note.getBody());
-                     var frame = document.getElementById("iframe");
-                     frame.contentWindow.postMessage(note.getBody(), "*"); 
+                     console.log('send command ' + note.getBody());
+                     window.top.postMessage(note.getBody(), "*"); 
                     break;
+				case demo.AppConstants.RECIVE:
+                     console.log('Recived post message:');
+                   //  window.top.postMessage(note.toString(), "*"); 
+					break;
 			}
 		},
 	
 		/** @override */
 		onRegister: function ()
 		{
-                  console.log('Registed iframe proxy succesfully');
         var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
         var eventer = window[eventMethod];
         var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
@@ -50,9 +54,10 @@ puremvc.define
 		/** @override */
 		onRemove: function ()
 		{
-                     frame.contentWindow.postMessage("PARENT_REMOVED", "*"); 
+
 		},
 		
+
 	},
 	
 	// STATIC MEMBERS

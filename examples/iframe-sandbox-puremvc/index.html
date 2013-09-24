@@ -89,19 +89,15 @@
 			demo.ApplicationFacade.getInstance(demo.ApplicationFacade.NAME).startup();
 			});
 		</script>
+<frameset cols="30%,70%">
 
-        <iframe src="iframe.html" name="iframe" sandbox="allow-scripts allow-same-origin" width="500" height="300" ></iframe>
+        <iframe src="iframe.html" id="iframe" sandbox="allow-scripts allow-same-origin" width="500" height="300" ></iframe>
+</frameset>
+
 	</body>
 		<script>
 
- var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
-        var eventer = window[eventMethod];
-        var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
-        var that = this; 
-        eventer(messageEvent,function(e) {
-         console.log('recived msg:\n',e.data);
-         that.demo.view.mediator.IFrameMediator.sendNotification( demo.AppConstants.RECIVE, "pie" );
-        },false);
+        
 		</script>
 	</body>
 </html>
