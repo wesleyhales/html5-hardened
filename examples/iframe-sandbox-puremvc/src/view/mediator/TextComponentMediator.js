@@ -34,8 +34,6 @@ puremvc.define
 					break;
 				
 				case demo.AppConstants.PALINDROME_DETECTED:
-                    console.log('Sent Notification:  ',note.getName());
-                    this.sendNotification( demo.AppConstants.IFRAME, note.getName() );
 					this.viewComponent.setIsPalindrome( true );
 					break;
 			}

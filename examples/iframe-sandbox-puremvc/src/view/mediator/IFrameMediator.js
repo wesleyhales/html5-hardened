@@ -26,9 +26,13 @@ puremvc.define
 			switch ( note.getName() )
 			{
 				case demo.AppConstants.SEND:
-                     console.log('recived from iframe \n' + note.getBody());
-                     var frame = document.getElementById("iframe");
-                     frame.contentWindow.postMessage(note.getBody(), "*"); 
+                     console.log('Parent:dispatched to iframe \n' + note.getBody());
+                     var frames = new Array();
+  frames[0] = document.getElementById("iframe");
+  frames[1] = document.getElementById("iframe2");
+                    for(i =0;  i< frames.length; i++ ) {
+                      frames[i].contentWindow.postMessage(note.getBody(), "*"); 
+                    }
                     break;
 			}
 		},
@@ -42,8 +46,8 @@ puremvc.define
         var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
         var that = this; 
         eventer(messageEvent,function(e) {
-         console.log('recived msg:\n',e.data);
-			that.sendNotification( demo.AppConstants.PROCESS_TEXT, e.data );
+         console.log('Parent: recived msg:\n',e.data);
+			that.sendNotification( demo.AppConstants.PROCESS_TEXT, e.data, "internal" );
             },false);
 		},					
 		

@@ -28,8 +28,8 @@ puremvc.define
 			switch ( note.getName() )
 			{
 				case demo.AppConstants.SEND:
-                     console.log('Iframe1: dispatched' + note.getBody());
-                    window.top.postMessage(note.getBody(), "*"); 
+                     console.log('send command ' + note.getBody());
+                     window.top.postMessage(note.getBody(), "*"); 
                     break;
 				case demo.AppConstants.RECIVE:
                      console.log('Recived post message:');
@@ -46,8 +46,8 @@ puremvc.define
         var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
         var that = this; 
         eventer(messageEvent,function(e) {
-         console.log('Iframe1:recived msg:\n',e.data);
-			that.sendNotification( demo.AppConstants.PROCESS_TEXT, e.data, "internal");
+         console.log('Iframe2:recived msg:\n',e.data);
+			that.sendNotification( demo.AppConstants.PROCESS_TEXT, e.data, "internal" );
             },false);
 		},					
 		

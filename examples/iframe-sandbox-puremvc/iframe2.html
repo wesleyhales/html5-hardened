@@ -2,13 +2,12 @@
 <html>
 	<head>
 		<!-- PAGE TITLE -->
-		<title>PureMVC_JS Native Demo - Text Reverser</title>
+		<title>PureMVC_JS Ifrane Demo - Text Reverser</title>
 		
 		<!-- CSS STYLES-->
 		<link rel="stylesheet" href="lib/css/bootstrap.min.css" />
 	</head>
-
-    <body>
+	<body>
 		<!-- INPUT FORM -->
 		<form class="well form-horizontal" id="textForm">
 			<fieldset>
@@ -37,6 +36,7 @@
 						<label class="checkbox">
 							<input type="checkbox" name="optionsCheckboxList1" value="option1">Reverse as I type
 						</label>
+
 						<label class="checkbox">
                             <input type="checkbox" id="sender" value="option1">Send to other window
                         </label>
@@ -58,27 +58,27 @@
 		<script src="lib/js/puremvc-1.0.js"></script>
 		
 		<!-- APPLICATION (VIEW/CONTROLLER RELATED) CONSTANTS -->
-		<script src="src/AppConstants.js"></script>
+		<script src="src-iframe-2/AppConstants.js"></script>
 		
 		<!-- APPLICATION FACADE -->
-		<script src="src/ApplicationFacade.js"></script>
+		<script src="src-iframe-2/ApplicationFacade.js"></script>
 
 		<!-- PROXYS -->
-		<script src="src/model/proxy/TextProxy.js"></script>
+		<script src="src-iframe-2/model/proxy/TextProxy.js"></script>
 
 		<!-- COMMANDS -->
-		<script src="src/controller/command/StartupCommand.js"></script>
-		<script src="src/controller/command/PrepareViewCommand.js"></script>
-		<script src="src/controller/command/PrepareModelCommand.js"></script>
-		<script src="src/controller/command/PrepareControllerCommand.js"></script>
-		<script src="src/controller/command/ProcessTextCommand.js"></script>
+		<script src="src-iframe-2/controller/command/StartupCommand.js"></script>
+		<script src="src-iframe-2/controller/command/PrepareViewCommand.js"></script>
+		<script src="src-iframe-2/controller/command/PrepareModelCommand.js"></script>
+		<script src="src-iframe-2/controller/command/PrepareControllerCommand.js"></script>
+		<script src="src-iframe-2/controller/command/ProcessTextCommand.js"></script>
 		
 		<!-- VIEW COMPONENTS -->
-		<script src="src/view/component/TextComponent.js"></script>
+		<script src="src-iframe-2/view/component/TextComponent.js"></script>
 		
 		<!-- MEDIATORS -->
-		<script src="src/view/mediator/TextComponentMediator.js"></script>
-		<script src="src/view/mediator/IFrameMediator.js"></script>
+		<script src="src-iframe-2/view/mediator/TextComponentMediator.js"></script>
+		<script src="src-iframe-2/view/mediator/IFrameMediator.js"></script>
 		
 		<!-- START THE APPLICATION -->
 		<script>
@@ -88,17 +88,6 @@
 			// initialize the facade by retrieving an instance and calling startup
 			demo.ApplicationFacade.getInstance(demo.ApplicationFacade.NAME).startup();
 			});
-		</script>
-<frameset cols="30%,70%">
-
-        <iframe src="iframe.html" id="iframe" sandbox="allow-scripts allow-same-origin" width="500" height="320" ></iframe>
-        <iframe src="iframe2.html" id="iframe2" sandbox="allow-scripts allow-same-origin" width="500" height="320" ></iframe>
-</frameset>
-
-	</body>
-		<script>
-
-        
 		</script>
 	</body>
 </html>
