@@ -29,7 +29,12 @@ puremvc.define
 			{
 				case demo.AppConstants.SEND:
                      console.log('Iframe2: dispatched ' + note.getBody());
-                    window.top.postMessage( "1|" + note.getBody(), "*"); 
+                var data = new Object();
+                    data.type = "note";
+                    data.origin = "iframe1" ; 
+                    data.body = note.getBody();
+            
+                    window.top.postMessage( data, "*"); 
                     break;
 				case demo.AppConstants.RECIVE:
                      console.log('Recived post message:');
@@ -41,12 +46,16 @@ puremvc.define
 		/** @override */
 		onRegister: function ()
 		{
-        window.top.postMessage(demo.AppConstants.ID + "|" + demo.AppConstants.SUBSCRIPTIONS, "*"); 
-        var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
-        var eventer = window[eventMethod];
-        var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
+
+        var data = new Object();
+        data.type = "subscription"
+        data.origin = demo.AppConstants.ID;
+        data.body = ["fiveormore","sevenormore"]
+        //window.top.postMessage(demo.AppConstants.ID + "|" + demo.AppConstants.SUBSCRIPTIONS, "*"); 
+
+ window.top.postMessage(data,"*")
         var that = this; 
-        eventer(messageEvent,function(e) {
+        window.addEventListener("message",function(e) {
          console.log('Iframe2:recived msg:\n',e.data);
 			that.sendNotification( demo.AppConstants.PROCESS_TEXT, e.data, "internal" );
             },false);

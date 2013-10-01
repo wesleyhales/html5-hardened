@@ -58,6 +58,7 @@ puremvc.define(
                 window.addEventListener("message", function (e)
                     {
                         console.log('Parent: recived msg:\n', e.data);
+/*
                         var data = e.data.split("|");
                         if (data[0].substr(0, 4) == "iframe")
                         {
@@ -94,6 +95,7 @@ puremvc.define(
                             iframes.splice(iframes.indexOf(data[1]), 1);
                             numFrames--;
                         }
+*/
                 }, false);
         }
     },
