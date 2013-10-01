@@ -28,8 +28,8 @@ puremvc.define
 			switch ( note.getName() )
 			{
 				case demo.AppConstants.SEND:
-                     console.log('send command ' + note.getBody());
-                     window.top.postMessage(note.getBody(), "*"); 
+                     console.log('Iframe2: dispatched ' + note.getBody());
+                    window.top.postMessage( "1|" + note.getBody(), "*"); 
                     break;
 				case demo.AppConstants.RECIVE:
                      console.log('Recived post message:');
@@ -41,6 +41,7 @@ puremvc.define
 		/** @override */
 		onRegister: function ()
 		{
+        window.top.postMessage(demo.AppConstants.ID + "|" + demo.AppConstants.SUBSCRIPTIONS, "*"); 
         var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
         var eventer = window[eventMethod];
         var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
@@ -54,7 +55,7 @@ puremvc.define
 		/** @override */
 		onRemove: function ()
 		{
-
+             window.top.postMessage(demo.AppConstants.REMOVED, "*"); 
 		},
 		
 

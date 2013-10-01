@@ -29,7 +29,7 @@ puremvc.define
 			{
 				case demo.AppConstants.SEND:
                      console.log('Iframe1: dispatched' + note.getBody());
-                    window.top.postMessage(note.getBody(), "*"); 
+                    window.top.postMessage( "1|" + note.getBody(), "*"); 
                     break;
 				case demo.AppConstants.RECIVE:
                      console.log('Recived post message:');

@@ -25,7 +25,17 @@ window.demo=
 
         SEND : 'send',
 
-        RECIVE : 'recive'
+        RECIVE : 'recive',
+
+        /**
+		 * A '|' sperated list of notifications that the proxy should be notified for
+		 */
+
+        SUBSCRIPTIONS : 'fiveormore|sevenormore',
+
+        REMOVED : 'removed',
+
+        ID : 'iframe2'
 
 	}
 };
