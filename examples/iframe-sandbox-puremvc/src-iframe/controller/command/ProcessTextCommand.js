@@ -17,7 +17,7 @@ puremvc.define
 		{
 			// Get the text to be processed from the notification
 			var text = note.getBody();
-			
+
 			// Process the text
 			var reverse = text.split('').reverse().join('');
 			
@@ -30,6 +30,7 @@ puremvc.define
 			// If reversed text is the same as forward text, 
 			// send notification that a palindrome was detected
 			if ( reverse == text && text != "" ) this.sendNotification( demo.AppConstants.PALINDROME_DETECTED );
+            if(note.getType() != "internal")
 			if ( reverse == text && text != "" ) this.sendNotification( demo.AppConstants.SEND, text );
 		}	
 	}

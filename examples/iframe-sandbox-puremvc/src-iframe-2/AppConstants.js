@@ -19,23 +19,26 @@ window.demo=
 		PALINDROME_DETECTED: 'palindromeDetected',
 
         /**
-		 * A notification that that
+		 * A ',' sperated list of notifications that the IFrameproxy should be notified for
 		 */
-		IFRAME : 'iframe',
+
+        SUBSCRIPTIONS : 'fiveormore,sevenormore,palindromeDetected',
+
+        /**
+		 * The id of the iframe MUST match the dom id of the iframe
+		 */
+
+        ID : 'iframe2',
+
+        REMOVED : 'removed',
 
         SEND : 'send',
 
         RECIVE : 'recive',
 
-        /**
-		 * A '|' sperated list of notifications that the proxy should be notified for
-		 */
+        SUBSCRIBE: 'subscribe',
 
-        SUBSCRIPTIONS : 'fiveormore|sevenormore',
-
-        REMOVED : 'removed',
-
-        ID : 'iframe2'
+        DATA : 'data'
 
 	}
 };

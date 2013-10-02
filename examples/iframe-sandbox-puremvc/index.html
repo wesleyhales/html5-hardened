@@ -59,6 +59,7 @@
 		
 		<!-- APPLICATION (VIEW/CONTROLLER RELATED) CONSTANTS -->
 		<script src="src/AppConstants.js"></script>
+		<script src="IFrameMediatorCommon.js"></script>
 		
 		<!-- APPLICATION FACADE -->
 		<script src="src/ApplicationFacade.js"></script>
@@ -77,8 +78,10 @@
 		<script src="src/view/component/TextComponent.js"></script>
 		
 		<!-- MEDIATORS -->
+		<script src="IFrameMediatorCommon.js"></script>
 		<script src="src/view/mediator/TextComponentMediator.js"></script>
 		<script src="src/view/mediator/IFrameMediator.js"></script>
+
 		
 		<!-- START THE APPLICATION -->
 		<script>
@@ -91,7 +94,7 @@
 		</script>
 <frameset cols="30%,70%">
 
-        <iframe src="iframe.html" id="iframe" sandbox="allow-scripts allow-same-origin" width="500" height="320" ></iframe>
+        <iframe src="iframe.html" id="iframe1" sandbox="allow-scripts allow-same-origin" width="500" height="320" ></iframe>
         <iframe src="iframe2.html" id="iframe2" sandbox="allow-scripts allow-same-origin" width="500" height="320" ></iframe>
 </frameset>
 
