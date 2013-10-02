@@ -31,78 +31,49 @@ puremvc.define(
         {
             var iframes = [];
             var numFrames = 0;
-            getSubs();
+            addListener();
 
-            function addListener()
-            {
-                var that = this;
-                window.addEventListener("message", function (e)
-                {
-                    console.log('Parent: recived msg:\n', e.data);
-                    console.log('Parent: Number of frames\n', numFrames);
-                    var data = e.data.split("|");
-                    if (data[0] = 0)
-                    {
-                        that.sendNotification(demo.AppConstants.PROCESS_TEXT, "internal");
-                    }
-                    else
-                    {
-                        iframes.node[data[0]].contentWindow.postMessage(data[1], "*");
-                    }
-                }, false);
-            }
+            function addListener() {
 
-            function getSubs()
-            {
-                var that = this;
                 window.addEventListener("message", function (e)
                     {
                         console.log('Parent: recived msg:\n', e.data);
-/*
-                        var data = e.data.split("|");
-                        if (data[0].substr(0, 4) == "iframe")
-                        {
+                        var data = e.data;
+                        switch (data.type) {
+
+                        case "subscription" :
                             iframes[numFrames] = new Object();
-                            iframes[numFrames].name = data[0];
-                            iframes[numFrames].node = document.getElementById(data[0]);
-                            iframes[numFrames].subs = [];
-                            for (i = 1; i < data.length; i++)
-                            {
-                                iframes[numFrames].subs[i - 1] = data[i];
-                            }
+                            iframes[numFrames].name = data.origin;
+                            iframes[numFrames].node = document.getElementById(data.origin);
+                            iframes[numFrames].subs = data.body
                             numFrames++;
-                        }
-                        else if (data[0].substr(0, 3) == "type")
-                        {
-                            switch (data[1])
-                            {
-                            case "fiveormore":
-                                for (i = 0; i < numFrames; i++)
+                             break;
+                        case "removed" :
+                            iframes.splice(iframes.indexOf(data.origin), 1);
+                            numFrames--;
+                            break;
+
+                        case "data" :
+                            for (i = 0; i < numFrames; i++)
                                 {
                                     for (n = 0; n < numFrames; n++)
                                     {
-                                        if (iframes[i].subs[n] = "fiveormore")
+                                        if (iframes[i].subs[n] = data.notification)
                                         {
-                                            iframes[i].node.contentWindow.postMessage(data[2], "*");
+                                            iframes[i].node.contentWindow.postMessage(data.body, "*");
                                         }
                                     }
                                 }
-                                break;
-                            }
+                            break; 
                         }
-                        else if (data[0].substr(0, 4) == "remove")
-                        {
-                            iframes.splice(iframes.indexOf(data[1]), 1);
-                            numFrames--;
-                        }
-*/
+
                 }, false);
         }
     },
     /** @override */
     onRemove: function ()
     {
-        frame.contentWindow.postMessage("PARENT_REMOVED", "*");
+        frame.contentWindow.postMessage("REMOVED", "*");
     },
 // STATIC MEMBERS
 /**
