@@ -33,6 +33,7 @@ function subscribe(subsriptionList)
     data.body = subsriptionList.split(',');
     window.top.postMessage(data, "*");
 }
+
 /*
  * Removes the frame from the list of iframes.
  */
@@ -69,7 +70,7 @@ function addParent(subscriptionList)
 {
     var parent = new Object;
     parent.name = demo.AppConstants.ID;
-    parent.node = window;
+    parent.node = this;
     parent.subs = subscriptionList.split(',');
     iframes[numFrames] = parent;
     numFrames++;
@@ -86,6 +87,26 @@ function addIframelistener(context)
         handlePost(context, e.data);
     }, false);
 }
+
+/*
+ * Removes the iframe from the dom and the array of frames. 
+ * @param a iframe object from the iframes[] 
+ */
+function removeFrame(frame) {
+    console.log(demo.AppConstants.ID + ': removed:\n', frame.origin);
+    var index = 0;
+    for(var i = 0; i < numFrames; i++) {
+        if (iframes[i].name == frame.origin) {
+            index = i;
+            break;
+        }
+    }
+   var removed = iframes.splice(index, 1);
+   var node = removed[0].node;
+   node.parentNode.removeChild(node);
+   numFrames--;
+}
+
 /*
  * Adds a event listner to the parent window, handles distribution of notifications and the list of iframes.
  */
@@ -106,16 +127,15 @@ function addParentListener(context)
             numFrames++;
             break;
         case demo.AppConstants.REMOVED:
-            console.log(demo.AppConstants.ID + ': removed:\n', e.data.origin);
-            iframes.splice(iframes.indexOf(data.origin), 1);
-            numFrames--;
+            removeFrame(data);
             break;
         case demo.AppConstants.DATA:
             for (i = 0; i < numFrames; i++)
             {
                 if (iframes[i].name != data.origin)
                 {
-                    for (n = 0; n < iframes[i].subs.length; n++)
+                    var len = iframes[i].subs.length;
+                    for (n = 0; n < len; n++)
                     {
                         if (iframes[i].subs[n] == data.notification)
                         {
