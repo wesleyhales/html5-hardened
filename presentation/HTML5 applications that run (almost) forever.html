@@ -85,15 +85,11 @@
             <section class="slide" data-option="master">
                 <h3 style="color:orange" class="send">How long do you expect your HTML5 app or web page to run?</h3>
             </section>
-            <section class="slide" data-option="< 1 day">
-                <div class="send">
-                    < 1 day -- Bear with me!
-                </div>
+            <section class="slide" data-option="1 day">
+                <div class="send">1 day</div>
             </section>
-            <section class="slide" data-option="> 1 day">
-                <div class="send">
-                    > 1 day -- Now we're talking!
-                </div>
+            <section class="slide" data-option="More">
+                <div class="send">More</div>
             </section>
         </section>
 
@@ -155,63 +151,46 @@
             <h3>It's "How much hardening do you need?"</h3>
         </section>
 
-
-        <section class="slide-group">
-            <section class="slide" data-option="master">
-                <h3 style="color:orange" class="send">How easy is it to harden HTML5?</h3>
-            </section>
-
-            <section class="slide" data-option="Easy">
-                <img src="img/immature.jpg" />
-                <div class="send">
-                    Easy: All we need is a little duck tape and elbow grease!</p>
-                </div>
-            </section>
-
-            <section class="slide" data-option="Hard">
-                <div class="send">
-                    This is hard work!!
-                </div>
-                <img src="img/difficult.jpg" />
-            </section>
-
+        <section class="slide">
+            <h3 style="color:orange" class="send">This isn't easy</h3>
+            <img src="img/difficult.jpg" />
         </section>
 
-            <section class="slide">
-                <h3 style="color:orange" class="send">Hardening is hard</h3>
-                <p>Practices - foreign to most web developers</p>
-                <p>Platforms - maturing but not quite there yet</p>
-                <p>Libraries - completely clueless</p>
-                <p>Tools - focused on spot debugging</p>
-            </section>
+        <section class="slide">
+            <h3 style="color:orange" class="send">Unless less your standards are low</h3>
+            <img src="img/immature.jpg" />
+        </section>
 
-            <section class="slide" data-option="master">
-                <h3 style="color:orange" class="send">To harden you must test</h3>
-                <p>A robust test discipline is critical.</p>
-                <img src="img/lab.jpeg" />
-            </section>
+        <section class="slide">
+            <h3 style="color:orange" class="send">Challenges</h3>
+            <p>Practices - foreign to most web developers</p>
+            <p>Platforms - maturing but not quite there yet</p>
+            <p>Libraries - completely clueless</p>
+            <p>Tools - focused on spot debugging</p>
+        </section>
 
-            <section class="slide" data-option="master">
-                <h3 class="send">Types of testing</h3>
-                <p>“Long term stability” testing</p>
-                <p>“Stress” testing</p>
-                <p>“Soak” testing</p>
-            </section>
+        <section class="slide" data-option="master">
+            <h3 style="color:orange" class="send">To harden you must test</h3>
+            <p>A robust test discipline is critical.</p>
+            <img src="img/lab.jpeg" />
+        </section>
+
+        <section class="slide" data-option="master">
+            <h3 class="send">Types of testing</h3>
+            <p>“Long term stability” testing</p>
+            <p>“Stress” testing</p>
+            <p>“Soak” testing</p>
+        </section>
 
         <section class="slide-group">
             <section class="slide" data-option="master">
-                <h3 style="color:orange" class="send">How interesting are hardening test strategies?</h3>
+                <h3 style="color:orange" class="send">Do hardening test strategies interest you?</h3>
             </section>
-
-            <section class="slide" data-option="Very">
-                <div class="send">
-                    Very: I'll cover in some detail.
-                </div>
+            <section class="slide" data-option="Yes">
+                <div class="send">Yes</div>
             </section>
-            <section class="slide" data-option="Somewhat">
-                <div class="send">
-                    Somewhat: I'll skim through this section.
-                </div>
+            <section class="slide" data-option="Some">
+                <div class="send">Some</div>
             </section>
         </section>
 
@@ -356,10 +335,10 @@
         <section class="slide-group">
             <section class="slide" data-option="master">
                 <h3 class="send">Brute force debugging techniques</h3>
-                <p>DOM leaks - Walk DOM tree, dump to console</p>
+                <p>DOM leaks - Walk DOM tree, dump # to console</p>
                 <p>Timer storms - Wrap all timer calls with helpers you can instrument later</p>
                 <p>Dangling callbacks - Wrapper for all callbacks</p>
-                <p>Exceptions - depends</p>
+                <p>Exceptions - window.onerror(), automatic iframe reset</p>
             </section>
         </section>
 
@@ -382,6 +361,23 @@
                 <h3 class="send">Native Platform Application Management – Limitations</h3>
                 <p>Not always available</p>
                 <p>No help for problems in big apps (173K lines of JavaScript)</p>
+            </section>
+        </section>
+
+        <section class="slide-group">
+            <section class="slide" data-option="master">
+                <h3 style="color:orange" class="send">How many lines of JavaScript are in your web apps?</h3>
+            </section>
+
+            <section class="slide" data-option="0-49K">
+                <div class="send">
+                    0-49K
+                </div>
+            </section>
+            <section class="slide" data-option="50K+">
+                <div class="send">
+                    50K+
+                </div>
             </section>
         </section>
 
@@ -411,6 +407,9 @@
         <section class="slide-group">
             <section class="slide" data-option="master">
                 <h3 class="send">iframe sandbox overview</h3>
+                <p><a target="_blank" href="http://www.w3schools.com/tags/tag_iframe.asp">W3 Schools</a></p>
+                <p><a target="_blank" href="http://www.html5rocks.com/en/tutorials/security/sandboxed-iframes/">HTML5 Rocks!</a></p>
+                <p>Designed to protect you from others...but why not from yourself?</p>
             </section>
         </section>
 
@@ -426,7 +425,7 @@
             <section class="slide" data-option="master">
                 <h3 class="send">Pattern #1: iframe bootstrap</h3>
                 <p>Small amount of management code in root page</p>
-                <p>Whole app wrapped in iframe></p>
+                <p>Whole app wrapped in iframe</p>
                 <p>Delete / re-create iframe when app misbehavior detected</p>
             </section>
         </section>
@@ -479,6 +478,9 @@
                 <h3 class="send">Conclusions</h3>
                 <p>Test the heck out of your apps</p>
                 <p>Use iframe sandboxes as your safety net</p>
+                <br/>
+                <p>Code and presentations on GitHub</p>
+                <p><a target="_blank" href="https://github.com/jpullen/html5-hardened">https://github.com/jpullen/html5-hardened</a></p>
             </section>
         </section>
 
