@@ -27,7 +27,8 @@ puremvc.define
 			this.reverseButton 		= this.textForm.querySelector('button[type=submit]');
 			this.sendBox 		    = this.textForm.querySelector('#sender');
             this.divZero            = this.textForm.querySelector('button[type=divzero]');
-			
+            this.addTimer           = this.textForm.querySelector('button[type=addtimer]');
+
 			// listen to checkbox state changes, handled by #handleEvent
 			this.checkbox.addEventListener( 'change', this );
 			
@@ -42,6 +43,22 @@ puremvc.define
             {
                 this.divZero.addEventListener( 'divzero', this );
             }
+
+            // listen for add timer button clicks
+            if (this.addTimer)
+            {
+                this.addTimer.addEventListener( 'addtimer', this );
+            }
+
+            // start a timer
+            setInterval(function(){
+                var counter = this.textForm.querySelector('#textCounterLabel');
+                if (counter) {
+                    var value = parseInt(counter.innerHTML);
+                    value = value + 1;
+                    counter.innerHTML = value;
+                }
+            }, 1000);
 		}
 	},
 
@@ -77,8 +94,14 @@ puremvc.define
          * @type {HTMLButtonElement}
          */
         divZero: null,
-				
-		/**
+
+        /**
+         * @private
+         * @type {HTMLButtonElement}
+         */
+        addTimer: null,
+
+        /**
 		 * Set the palindrome indicator
 		 * @param {string}
 		 * @return {void}
@@ -172,6 +195,22 @@ puremvc.define
                     var a = 1;
                     var b = 0;
                     var c = a/b;
+                    break;
+
+                /*
+                 * The TextComponent's Add Timer button has been clicked.
+                 */
+                case 'addtimer':
+                    domEvent.preventDefault();
+                    // start another timer
+                    setInterval(function(){
+                        var counter = this.textForm.querySelector('#textCounterLabel');
+                        if (counter) {
+                            var value = parseInt(counter.innerHTML);
+                            value = value + 1;
+                            counter.innerHTML = value;
+                        }
+                    }, 1000);
                     break;
 			}
 		},
