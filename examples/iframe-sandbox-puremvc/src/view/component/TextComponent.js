@@ -25,9 +25,9 @@ puremvc.define
 			this.textOutputLabel 	= this.textForm.querySelector('#outputTextLabel');
 			this.checkbox			= this.textForm.querySelector('input[type=checkbox]');
 			this.reverseButton 		= this.textForm.querySelector('button[type=submit]');
-			this.sendBox 		    = this.textForm.querySelector('#sender');
             this.divZero            = this.textForm.querySelector('button[type=divzero]');
             this.addTimer           = this.textForm.querySelector('button[type=addtimer]');
+            this.removeButton       = this.textForm.querySelector('button[type=remove]');
 
 			// listen to checkbox state changes, handled by #handleEvent
 			this.checkbox.addEventListener( 'change', this );
@@ -41,13 +41,18 @@ puremvc.define
             // listen for exception button clicks
             if (this.divZero)
             {
-                this.divZero.addEventListener( 'divzero', this );
+                this.divZero.addEventListener( 'click', this );
             }
 
             // listen for add timer button clicks
             if (this.addTimer)
             {
-                this.addTimer.addEventListener( 'addtimer', this );
+                this.addTimer.addEventListener( 'click', this );
+            }
+
+            if (this.removeButton) 
+            {
+                this.removeButton.addEventListener('click', this);
             }
 
             // start a timer
@@ -100,6 +105,12 @@ puremvc.define
          * @type {HTMLButtonElement}
          */
         addTimer: null,
+
+        /**
+         * @private
+         * @type {HTMLButtonElement}
+         */
+        removeButton: null,
 
         /**
 		 * Set the palindrome indicator
@@ -185,17 +196,18 @@ puremvc.define
 				 */								
 				case 'click':
 					domEvent.preventDefault();
-					this.dispatchTextChangedEvent();
+                    switch (domEvent.srcElement.innerText) {
+                        case 'Reverse' :
+					        this.dispatchTextChangedEvent();
+                            break;
+                        case 'Divide Zero' :
+                            throw ({'hehe':'haha'});
+                            break
+                        case 'Remove IFrame1' :
+                            remove("iframe1");
+                            break;
+                    }
 					break;
-
-                /*
-                 * The TextComponent's Divide Zero button has been clicked.
-                 */
-                case 'divzero':
-                    var a = 1;
-                    var b = 0;
-                    var c = a/b;
-                    break;
 
                 /*
                  * The TextComponent's Add Timer button has been clicked.
