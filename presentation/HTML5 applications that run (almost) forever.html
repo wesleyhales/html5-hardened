@@ -176,7 +176,12 @@
                 <img src="img/difficult.jpg" />
             </section>
 
-            <section class="slide" data-option="Hard">
+
+        </section>
+
+        <section class="slide-group">
+            <section class="slide">
+                <h3 style="color:orange" class="send">Hardening is hard</h3>
                 <p>Practices - foreign to most web developers</p>
                 <p>Platforms - maturing but not quite there yet</p>
                 <p>Libraries - completely clueless</p>
@@ -186,10 +191,11 @@
 
         <section class="slide-group">
             <section class="slide" data-option="master">
-                <h3 style="color:orange" class="send">To harden you must test.</h3>
+                <h3 style="color:orange" class="send">To harden you must test</h3>
                 <p>A robust test discipline is critical.</p>
             </section>
         </section>
+
         <section class="slide-group">
             <section class="slide" data-option="master">
                 <h3 class="send">Types of testing</h3>
@@ -201,7 +207,7 @@
 
         <section class="slide-group">
             <section class="slide" data-option="master">
-                <h3 style="color:orange" class="send">How interesting are strategies for hardening?</h3>
+                <h3 style="color:orange" class="send">How interesting are hardening test strategies?</h3>
             </section>
 
             <section class="slide" data-option="Very">
@@ -211,13 +217,270 @@
             </section>
             <section class="slide" data-option="Somewhat">
                 <div class="send">
-                    Somewhat: I'll do a brief overview.
+                    Somewhat: I'll skim through this section.
                 </div>
             </section>
         </section>
 
+        <section class="slide-group">
+            <section class="slide" data-option="master">
+                <h3 class="send">What are we trying to find?</h3>
+                <p>Performance degradation (Inconsistency, Sluggishness)</p>
+                <p>Abnormal behavior</p>
+                <p>Unhandled exceptions</p>
+                <p>Data handling</p>
+                <p>Lost functionality</p>
+                <p>Reboots / browser resets</p>
+                <p>Corrupt state</p>
+            </section>
+        </section>
+
+        <section class="slide-group">
+            <section class="slide" data-option="master">
+                <h3 class="send">Test discipline</h3>
+                <p>Ensure clean environment before each test</p>
+                <p>Reset cookies and local storage</p>
+                <p>Restart browser and device</p>
+                <p>Test result database: By device, By build</p>
+                <p>Statistics matter for performance measurements</p>
+                <p>7+ samples (min, max, mean)</p>
+                <p>Comparable data sets</p>
+                <p>Comparable run-time environments</p>
+                <p>Comparable server-side environment</p>
+                <p>Comparable network environment</p>
+
+            </section>
+        </section>
+
+        <section class="slide-group">
+            <section class="slide" data-option="master">
+                <h3 class="send">Long-term stability testing</h3>
+                <p>Purpose: Simulate normal usage over an extended period of time over a large number of instances</p>
+                <p># of units: as many as possible (50+ units)</p>
+                <p>Methodology: Normal usage scenarios run continuously over a period of 1-2 days</p>
+                <p>Target: No noticeable degradation</p>
+            </section>
+        </section>
+
+        <section class="slide-group">
+            <section class="slide" data-option="master">
+                <h3 class="send">Stress testing</h3>
+                <p>Purpose: Simulate a long run-time by accelerating the usage time</p>
+                <p># of units: as many as possible (50+)</p>
+                <p>Methodology: Automated scripts with a key/click rate as fast as possible --> 1 day test can simulate 15-30 days of usage</p>
+                <p>Target: No noticeable degradation</p>
+            </section>
+        </section>
+
+        <section class="slide-group">
+            <section class="slide" data-option="master">
+                <h3 class="send">Soak testing</h3>
+                <p>Purpose: Find latent bugs that only show up over days or weeks</p>
+                <p># of units: small(er) number (10-20)</p>
+                <p>Methodology: Well-defined set of tests run once or twice a day for as many days as possible</p>
+                <p>Target: 30 days uptime with no degradation in functionality or performance</p>
+            </section>
+        </section>
 
 
+        <section class="slide-group">
+            <section class="slide" data-option="master">
+                <h3 class="send">Tools</h3>
+                <p>Test environments</p>
+                <p>Test automation tools</p>
+                <p>Know your browser</p>
+                <p>Brute-force debugging techniques</p>
+            </section>
+        </section>
+
+
+        <section class="slide-group">
+            <section class="slide" data-option="master">
+                <h3 class="send">Test environments</h3>
+                <p>Racks of physical hardware</p>
+                <p>Amazon AWS</p>
+                <p>Multiple browser instances</p>
+            </section>
+        </section>
+
+
+        <section class="slide-group">
+            <section class="slide" data-option="master">
+                <h3 class="send">Test automation tools</h3>
+                <p>Proprietary</p>
+                <p>IR blasters</p>
+                <p>Help me out - what do you use?</p>
+            </section>
+        </section>
+
+        <section class="slide-group">
+            <section class="slide" data-option="master">
+                <h3 class="send">Know your web engine tools</h3>
+                <p>WebKit Web Inspector</p>
+                <p>Chrome Debugger</p>
+                <p>GC collector stats</p>
+                <p>Memory stats</p>
+                <p>DOM tree stats</p>
+                <p>Firebug</p>
+                <p>Console logs</p>
+                <p>Etc.</p>
+                <p>Challenge: Figure out how to automate data collection across large # of instances!</p>
+            </section>
+        </section>
+
+
+        <section class="slide-group">
+            <section class="slide" data-option="master">
+                <h3 class="send">Test your web engine memory behavior</h3>
+                <p>Garbage collector memory pressure</p>
+                <p>Hard upper limit? GC bogs down</p>
+                <p>No upper limit? Unexpected memory growth</p>
+                <p>Cache memory pressure</p>
+                <p>Graphics cache</p>
+            </section>
+        </section>
+
+
+        <section class="slide-group">
+            <section class="slide" data-option="master">
+                <h3 class="send">Strategies for handling JavaScript bugs</h3>
+                <p>Fix them (duh) - Brute force</p>
+                <p>You’ll miss some bugs (duh) - Resilient application architecture(s)</p>
+            </section>
+        </section>
+
+
+        <section class="slide-group">
+            <section class="slide" data-option="master">
+                <h3 class="send">Typical JavaScript bugs</h3>
+                <p>DOM leaks</p>
+                <p>Timer storms</p>
+                <p>Dangling callbacks</p>
+                <p>Exceptions</p>
+                <p>Beware of your libraries!</p>
+            </section>
+        </section>
+
+
+        <section class="slide-group">
+            <section class="slide" data-option="master">
+                <h3 class="send">Brute force debugging techniques</h3>
+                <p>DOM leaks - Walk DOM tree, dump to console</p>
+                <p>Timer storms - Wrap all timer calls with helpers you can instrument later</p>
+                <p>Dangling callbacks - Wrapper for all callbacks</p>
+                <p>Exceptions - window.onerror() – not always reliable</p>
+            </section>
+        </section>
+
+
+        <section class="slide-group">
+            <section class="slide" data-option="master">
+                <h3 class="send">Native Platform Application Management</h3>
+                <p>Automatically kills an app that is misbehaving</p>
+                <p>CPU hog</p>
+                <p>Memory hog</p>
+                <p>Automatically restart an app that is mission-critical</p>
+                <p>App prioritization</p>
+                <p>Sand-boxing</p>
+                <p>Process separation</p>
+                <p>Storage separation (cookies, IndexDB, web storage)</p>
+
+            </section>
+        </section>
+
+
+        <section class="slide-group">
+            <section class="slide" data-option="master">
+                <h3 class="send">Native Web-engine Application Management – Limitations</h3>
+                <p>No cohesive user experience across apps</p>
+            </section>
+        </section>
+
+
+        <section class="slide-group">
+            <section class="slide" data-option="master">
+                <h3 class="send">Resilient HTML5 Application Architecture</h3>
+
+            </section>
+        </section>
+
+        <section class="slide-group">
+            <section class="slide" data-option="master">
+                <h3 class="send">Core idea: iframe sandboxing</h3>
+                <p>Question: Who's familiar with HTML5 iframes?</p>
+            </section>
+        </section>
+
+        <section class="slide-group">
+            <section class="slide" data-option="master">
+                <h3 class="send">Pattern #1: iframe bootstrap</h3>
+                <p>Okay to restart whole app</p>
+                <p>Native app framework does not support automatic restart</p>
+            </section>
+        </section>
+
+        <section class="slide-group">
+            <section class="slide" data-option="master">
+                <h3 class="send">Pattern #1: iframe bootstrap</h3>
+                <p>Small amount of management code in root page</p>
+                <p>Whole app wrapped in iframe></p>
+                <p>Delete / re-create iframe when app misbehavior detected</p>
+            </section>
+        </section>
+
+        <section class="slide-group">
+            <section class="slide" data-option="master">
+                <h3 class="send">Pattern #2: Multiple iframe sandboxes</h3>
+                <p>Not okay to restart whole app</p>
+                <p>Very large apps</p>
+                <p>High data / network usage on start-up</p>
+                <p>More resilient user experience</p>
+                <p>Seamless recovery from bugs with only minor user disruption</p>
+                <p>More complex</p>
+                <p>More restrictions</p>
+            </section>
+        </section>
+
+        <section class="slide-group">
+            <section class="slide" data-option="master">
+                <h3 class="send">Pattern #2: Multiple iframe sandboxes</h3>
+                <p>Core management logic in root page</p>
+                <p>Segment different parts of your app into "micro-apps"</p>
+                <p>Each micro-app wrapped in iframe</p>
+                <p>Communication between root page and micro-apps via postMessage()</p>
+                <p>Most micro-apps started / stopped on-demand</p>
+                <p>Some micro-apps run longer – restart when misbehavior detected</p>
+            </section>
+        </section>
+
+        <section class="slide-group">
+            <section class="slide" data-option="master">
+                <h3 class="send">Pattern #2: Multiple iframe sandboxes - limitations</h3>
+                <p>Duplicate files loaded into each iframe</p>
+                <p>Extra work to proxy communication across iframe boundaries</p>
+            </section>
+        </section>
+
+        <section class="slide-group">
+            <section class="slide" data-option="master">
+                <h3 class="send">iframe example: basic usage</h3>
+            </section>
+        </section>
+
+        <section class="slide-group">
+            <section class="slide" data-option="master">
+                <h3 class="send">iframe example: PureMVC iFrameMediator</h3>
+                <p>It's easy to make your frameworks iframe friendly!</p>
+            </section>
+        </section>
+
+        <section class="slide-group">
+            <section class="slide" data-option="master">
+                <h3 class="send">Conclusions</h3>
+                <p>Test the heck out of your apps</p>
+                <p>Use iframe sandboxes as your safety net</p>
+            </section>
+        </section>
 
         <!--
         <section class="slide-group">
