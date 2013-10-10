@@ -61,7 +61,6 @@
         <section class="slide-group">
             <section>
                 <h2 class="send">HTML5 applications that run (almost) forever</h2>
-                <h3><a href="http://www.linkedin.com/in/jeremypullen/">LinkedIn: Jeremy Pullen</a></h3>
                 <h3><a href="http://twitter.com/jeremypullen">Twitter: @jeremypullen</a></h3>
             </section>
         </section>
@@ -117,45 +116,45 @@
             </section>
         </section>
 
-        <section class="slide-group">
-            <section>
-                <h3 class="send">Many embedded devices have HTML5 at their core!</h3>
-                <img src="img/9800_multi-screen-1.jpg" />
-                <p>Where's the HTML5?</p>
-            </section>
 
-            <section>
-                <h3 class="send">On the TV!</h3>
-                <p>This is all HTML/CSS/JavaScript.</p>
-                <p>Many mobile apps are also hybrid native / HTML5.</p>
-                <img src="img/RTN_Capture3_large.jpg" />
-            </section>
-
-            <section>
-                <h3 class="send">Unique things about hybrid HTML5 environments</h3>
-                <p>HTML & JS hosted locally on device</p>
-                <p>Native plug-ins for many operations</p>
-                <p>Network operations relegated to background</p>
-                <p>Web engine built into the app / device (typically WebKit)</p>
-                <p>More control</p>
-                <p>Able to customize</p>
-            </section>
-
-            <section>
-                <h3 class="send">Core hardening practices haven't changed</h3>
-                <p>Robust & mature test strategy</p>
-                <p>Targeting 1,000,000+ devices</p>
-                <p>Failure not an option</p>
-            </section>
-
-            <section>
-                <h3 class="send">Other areas can also benefit</h3>
-                <p>Web sites</p>
-                <p>Mobile apps</p>
-                <p>The question isn't whether or not you need to harden your site / apps...</p>
-                <h3>It's "How much hardening do you need?"</h3>
-            </section>
+        <section>
+            <h3 class="send">Many embedded devices have HTML5 at their core!</h3>
+            <img src="img/9800_multi-screen-1.jpg" />
+            <p>Where's the HTML5?</p>
         </section>
+
+        <section>
+            <h3 class="send">On the TV!</h3>
+            <p>This is all HTML/CSS/JavaScript.</p>
+            <p>Many mobile apps are also hybrid native / HTML5.</p>
+            <img src="img/RTN_Capture3_large.jpg" />
+        </section>
+
+        <section>
+            <h3 class="send">Unique things about hybrid HTML5 environments</h3>
+            <p>HTML & JS hosted locally on device</p>
+            <p>Native plug-ins for many operations</p>
+            <p>Network operations relegated to background</p>
+            <p>Web engine built into the app / device (typically WebKit)</p>
+            <p>More control</p>
+            <p>Able to customize</p>
+        </section>
+
+        <section>
+            <h3 class="send">Core hardening practices haven't changed</h3>
+            <p>Robust & mature test strategy</p>
+            <p>Targeting 1,000,000+ devices</p>
+            <p>Failure not an option</p>
+        </section>
+
+        <section>
+            <h3 class="send">Other areas can also benefit</h3>
+            <p>Web sites</p>
+            <p>Mobile apps</p>
+            <p>The question isn't whether or not you need to harden your site / apps...</p>
+            <h3>It's "How much hardening do you need?"</h3>
+        </section>
+
 
         <section class="slide-group">
             <section class="slide" data-option="master">
@@ -176,10 +175,8 @@
                 <img src="img/difficult.jpg" />
             </section>
 
-
         </section>
 
-        <section class="slide-group">
             <section class="slide">
                 <h3 style="color:orange" class="send">Hardening is hard</h3>
                 <p>Practices - foreign to most web developers</p>
@@ -187,24 +184,19 @@
                 <p>Libraries - completely clueless</p>
                 <p>Tools - focused on spot debugging</p>
             </section>
-        </section>
 
-        <section class="slide-group">
             <section class="slide" data-option="master">
                 <h3 style="color:orange" class="send">To harden you must test</h3>
                 <p>A robust test discipline is critical.</p>
                 <img src="img/lab.jpeg" />
             </section>
-        </section>
 
-        <section class="slide-group">
             <section class="slide" data-option="master">
                 <h3 class="send">Types of testing</h3>
                 <p>“Long term stability” testing</p>
                 <p>“Stress” testing</p>
                 <p>“Soak” testing</p>
             </section>
-        </section>
 
         <section class="slide-group">
             <section class="slide" data-option="master">
@@ -341,7 +333,6 @@
             </section>
         </section>
 
-
         <section class="slide-group">
             <section class="slide" data-option="master">
                 <h3 class="send">Strategies for handling JavaScript bugs</h3>
@@ -349,7 +340,6 @@
                 <p>You’ll miss some bugs (duh) - Resilient application architecture(s)</p>
             </section>
         </section>
-
 
         <section class="slide-group">
             <section class="slide" data-option="master">
@@ -369,10 +359,9 @@
                 <p>DOM leaks - Walk DOM tree, dump to console</p>
                 <p>Timer storms - Wrap all timer calls with helpers you can instrument later</p>
                 <p>Dangling callbacks - Wrapper for all callbacks</p>
-                <p>Exceptions - window.onerror() – not always reliable</p>
+                <p>Exceptions - depends</p>
             </section>
         </section>
-
 
         <section class="slide-group">
             <section class="slide" data-option="master">
@@ -385,30 +374,43 @@
                 <p>Sand-boxing</p>
                 <p>Process separation</p>
                 <p>Storage separation (cookies, IndexDB, web storage)</p>
-
             </section>
         </section>
-
 
         <section class="slide-group">
             <section class="slide" data-option="master">
-                <h3 class="send">Native Web-engine Application Management – Limitations</h3>
-                <p>No cohesive user experience across apps</p>
+                <h3 class="send">Native Platform Application Management – Limitations</h3>
+                <p>Not always available</p>
+                <p>No help for problems in big apps (173K lines of JavaScript)</p>
             </section>
         </section>
-
 
         <section class="slide-group">
             <section class="slide" data-option="master">
                 <h3 class="send">Resilient HTML5 Application Architecture</h3>
-
             </section>
         </section>
 
         <section class="slide-group">
             <section class="slide" data-option="master">
-                <h3 class="send">Core idea: iframe sandboxing</h3>
-                <p>Question: Who's familiar with HTML5 iframes?</p>
+                <h3 style="color:orange" class="send">Who's familiar with the iframe sandbox option (new in HTML5)?</h3>
+            </section>
+
+            <section class="slide" data-option="Yes">
+                <div class="send">
+                    Yes
+                </div>
+            </section>
+            <section class="slide" data-option="No">
+                <div class="send">
+                    No
+                </div>
+            </section>
+        </section>
+
+        <section class="slide-group">
+            <section class="slide" data-option="master">
+                <h3 class="send">iframe sandbox overview</h3>
             </section>
         </section>
 
@@ -465,13 +467,19 @@
         <section class="slide-group">
             <section class="slide" data-option="master">
                 <h3 class="send">iframe example: basic usage</h3>
+
             </section>
         </section>
 
         <section class="slide-group">
             <section class="slide" data-option="master">
                 <h3 class="send">iframe example: PureMVC iFrameMediator</h3>
-                <p>It's easy to make your frameworks iframe friendly!</p>
+            </section>
+        </section>
+
+        <section class="slide-group">
+            <section class="slide" data-option="master">
+                <h3 class="send">With a little work your libraries can be iframe sandbox friendly!</h3>
             </section>
         </section>
 
