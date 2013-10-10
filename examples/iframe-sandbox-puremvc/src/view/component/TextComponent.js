@@ -25,15 +25,23 @@ puremvc.define
 			this.textOutputLabel 	= this.textForm.querySelector('#outputTextLabel');
 			this.checkbox			= this.textForm.querySelector('input[type=checkbox]');
 			this.reverseButton 		= this.textForm.querySelector('button[type=submit]');
+			this.sendBox 		    = this.textForm.querySelector('#sender');
+            this.divZero            = this.textForm.querySelector('button[type=divzero]');
 			
 			// listen to checkbox state changes, handled by #handleEvent
 			this.checkbox.addEventListener( 'change', this );
 			
 			// listen to reverse button clicks, handled by #handleEvent
 			this.reverseButton.addEventListener( 'click', this );
-			
+
 			// listen for input keystrokes, handled by #handleEvent
-			this.textInput.addEventListener( 'keyup', this );	
+			this.textInput.addEventListener( 'keyup', this );
+
+            // listen for exception button clicks
+            if (this.divZero)
+            {
+                this.divZero.addEventListener( 'divzero', this );
+            }
 		}
 	},
 
@@ -63,6 +71,12 @@ puremvc.define
 		 * @type {HTMLButtonElement}
 		 */
 		reverseButton: null,
+
+        /**
+         * @private
+         * @type {HTMLButtonElement}
+         */
+        divZero: null,
 				
 		/**
 		 * Set the palindrome indicator
@@ -150,6 +164,15 @@ puremvc.define
 					domEvent.preventDefault();
 					this.dispatchTextChangedEvent();
 					break;
+
+                /*
+                 * The TextComponent's Divide Zero button has been clicked.
+                 */
+                case 'divzero':
+                    var a = 1;
+                    var b = 0;
+                    var c = a/b;
+                    break;
 			}
 		},
 

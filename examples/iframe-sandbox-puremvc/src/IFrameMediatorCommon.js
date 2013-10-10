@@ -132,6 +132,7 @@ function addParentListener(context)
  */
 function addIframelistener(context)
 {
+    // Works for Chrome and WebKit - Mozilla requires attachEvent() and "onmessage"
     window.addEventListener("message", function (e)
     {
         console.log(demo.AppConstants.ID + ':recived msg:\n', e.data);
