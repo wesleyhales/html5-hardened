@@ -16,8 +16,8 @@ puremvc.define
 		execute: function (note)
 		{
 			// register the TextComponentMediator
-			this.facade.registerMediator( new demo.view.mediator.TextComponentMediator() );
-			this.facade.registerMediator( new demo.view.mediator.IFrameMediator() );
+			this.facade.registerMediator( new demo.view.mediator.TextComponentMediator );
+			this.facade.registerMediator( new demo.view.mediator.IFrameMediator );
 		}
 	}
 );				

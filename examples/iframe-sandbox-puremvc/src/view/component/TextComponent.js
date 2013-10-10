@@ -25,16 +25,12 @@ puremvc.define
 			this.textOutputLabel 	= this.textForm.querySelector('#outputTextLabel');
 			this.checkbox			= this.textForm.querySelector('input[type=checkbox]');
 			this.reverseButton 		= this.textForm.querySelector('button[type=submit]');
-			this.sendBox 		= this.textForm.querySelector('#sender');
 			
 			// listen to checkbox state changes, handled by #handleEvent
 			this.checkbox.addEventListener( 'change', this );
 			
 			// listen to reverse button clicks, handled by #handleEvent
 			this.reverseButton.addEventListener( 'click', this );
-
-			// listen to send button clicks, handled by #handleEvent
-			this.sendBox.addEventListener( 'change', this );
 			
 			// listen for input keystrokes, handled by #handleEvent
 			this.textInput.addEventListener( 'keyup', this );	
