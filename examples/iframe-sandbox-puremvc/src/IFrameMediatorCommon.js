@@ -93,7 +93,8 @@ function addParentListener(context)
         switch (data.type)
         {
         case demo.AppConstants.SUBSCRIBE:
-            console.log(demo.AppConstants.ID + ': recived subscription:\n', data);
+            console.log(demo.AppConstants.ID + ': recived subscription:\n', data)
+            removeIfExist(data);
             iframes[numFrames] = new Iframe(data.origin, data.body);
             numFrames++;
             break;
@@ -162,6 +163,19 @@ function notifyFrame(context,data)
     }
 }
 
+/**
+ * Removes the old refrence from iframes[] in the event of a resubscribe
+ * @parm frame: a Iframe object
+ */
+function removeIfExist(frame) {
+    for(i =0 ; i < numFrames; i++) {
+        if(frame.origin === iframes[i].name) {
+            iframes.splice(i, 1);
+            numFrames--;
+            break;
+        }
+    }
+}
 
 /**
  * Removes the iframe from the dom and the array of frames.
