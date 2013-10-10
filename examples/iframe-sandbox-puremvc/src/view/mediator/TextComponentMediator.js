@@ -18,7 +18,7 @@ puremvc.define
 			return [
 					demo.model.proxy.TextProxy.TEXT_CHANGED,
 					demo.AppConstants.PALINDROME_DETECTED,
-                    demo.AppConstants.RECIVE
+                    demo.AppConstants.RECEIVE
 					]
 		},
 		
@@ -27,12 +27,12 @@ puremvc.define
 		{
 			switch ( note.getName() )
 			{
-                case  demo.AppConstants.RECIVE:
+                case  demo.AppConstants.RECEIVE:
 					this.viewComponent.setOutputText( note.getBody() );
+                    break;
 				case demo.model.proxy.TextProxy.TEXT_CHANGED:
 					this.viewComponent.setOutputText( note.getBody() );
 					break;
-				
 				case demo.AppConstants.PALINDROME_DETECTED:
 					this.viewComponent.setIsPalindrome( true );
 					break;

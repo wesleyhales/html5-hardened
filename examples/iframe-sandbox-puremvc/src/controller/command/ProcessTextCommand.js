@@ -31,7 +31,7 @@ puremvc.define
 			// send notification that a palindrome was detected
 			if ( reverse == text && text != "" ) this.sendNotification( demo.AppConstants.PALINDROME_DETECTED );
             if(note.getType() != "internal")
-			if ( reverse == text && text != "" ) this.sendNotification( demo.AppConstants.SEND, text );
+            this.sendNotification( demo.AppConstants.SEND, text );
 		}	
 	}
 );

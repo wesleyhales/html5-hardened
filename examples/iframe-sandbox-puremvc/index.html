@@ -37,9 +37,6 @@
 						<label class="checkbox">
 							<input type="checkbox" name="optionsCheckboxList1" value="option1">Reverse as I type
 						</label>
-						<label class="checkbox">
-                            <input type="checkbox" id="sender" value="option1">Send to other window
-                        </label>
 					</div>
 				</div>
 
@@ -59,7 +56,6 @@
 		
 		<!-- APPLICATION (VIEW/CONTROLLER RELATED) CONSTANTS -->
 		<script src="src/AppConstants.js"></script>
-		<script src="IFrameMediatorCommon.js"></script>
 		
 		<!-- APPLICATION FACADE -->
 		<script src="src/ApplicationFacade.js"></script>
@@ -78,7 +74,7 @@
 		<script src="src/view/component/TextComponent.js"></script>
 		
 		<!-- MEDIATORS -->
-		<script src="IFrameMediatorCommon.js"></script>
+		<script src="src/IFrameMediatorCommon.js"></script>
 		<script src="src/view/mediator/TextComponentMediator.js"></script>
 		<script src="src/view/mediator/IFrameMediator.js"></script>
 
@@ -92,16 +88,9 @@
 			demo.ApplicationFacade.getInstance(demo.ApplicationFacade.NAME).startup();
 			});
 		</script>
-<frameset cols="30%,70%">
-
-        <iframe src="iframe.html" id="iframe1" sandbox="allow-scripts allow-same-origin" width="500" height="320" ></iframe>
-        <iframe src="iframe2.html" id="iframe2" sandbox="allow-scripts allow-same-origin" width="500" height="320" ></iframe>
-</frameset>
-
-	</body>
-		<script>
-
-        
-		</script>
+        <frameset cols="30%,70%">
+            <iframe src="iframe1.html" id="iframe1" sandbox="allow-scripts allow-same-origin" width="500" height="320" ></iframe>
+            <iframe src="iframe2.html" id="iframe2" sandbox="allow-scripts allow-same-origin" width="500" height="320" ></iframe>
+        </frameset>
 	</body>
 </html>
