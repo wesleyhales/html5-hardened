@@ -52,450 +52,462 @@
     <span><span id="wscount"></span> WebSocket </span><span><span id="pollcount"></span> Polling</span>
 </div>
 <div class="reveal">
-    <div class="address">
-        <h4 style="text-transform: lowercase;">connect now <span style="color:#13daec;">http://onslyde.com/go/<span id="sessionID"></span></span></h4>
-    </div>
-    <!-- Any section element inside of this container is displayed as a slide -->
-    <div class="slides">
-
-        <section class="slide-group">
-            <section>
-                <h2 class="send">HTML5 applications that run (almost) forever</h2>
-                <h3><a href="http://twitter.com/jeremypullen">Twitter: @jeremypullen</a></h3>
-            </section>
-        </section>
-
-        <section class="slide-group">
-            <section class="slide" data-option="master">
-                <h3 style="color:orange" class="send">What type of environment do you develop for the most?</h3>
-            </section>
-            <section class="slide" data-option="Apps">
-                <div class="send">
-                    Apps
-                </div>
-            </section>
-            <section class="slide" data-option="Web">
-                <div class="send">
-                    Web
-                </div>
-            </section>
-        </section>
-
-        <section class="slide-group">
-            <section class="slide" data-option="master">
-                <h3 style="color:orange" class="send">How long do you expect your HTML5 app or web page to run?</h3>
-            </section>
-            <section class="slide" data-option="1 day">
-                <div class="send">1 day</div>
-            </section>
-            <section class="slide" data-option="More">
-                <div class="send">More</div>
-            </section>
-        </section>
-
-        <section class="slide-group">
-            <section class="slide" data-option="master">
-                <h3 style="color:orange" class="send">How often do you want to manually restart your TV or an app on your mobile phone?</h3>
-            </section>
-
-            <section class="slide" data-option="Never">
-                <div class="send">
-                    <p>Never: Uptime of 30+ days</p>
-                    <p>Expected to be self-healing (auto-restart on failure)</p>
-                </div>
-            </section>
-
-            <section class="slide" data-option="Occasionally">
-                <div class="send">
-                    Seriously?
-                </div>
-            </section>
-        </section>
-
-
-        <section class="slide">
-            <h3 class="send">Many embedded devices have HTML5 at their core!</h3>
-            <img src="img/9800_multi-screen-1.jpg" />
-            <p>Where's the HTML5?</p>
-        </section>
-
-        <section class="slide">
-            <h3 class="send">On the TV!</h3>
-            <p>This is all HTML/CSS/JavaScript.</p>
-            <p>Many mobile apps are also hybrid native / HTML5.</p>
-            <img src="img/RTN_Capture3_large.jpg" />
-        </section>
-
-        <section class="slide">
-            <h3 class="send">Unique things about hybrid HTML5 environments</h3>
-            <p>HTML & JS hosted locally on device</p>
-            <p>Native plug-ins for many operations</p>
-            <p>Network operations relegated to background</p>
-            <p>Web engine built into the app / device (typically WebKit)</p>
-            <p>More control</p>
-            <p>Able to customize</p>
-        </section>
-
-        <section class="slide">
-            <h3 class="send">Core hardening practices haven't changed</h3>
-            <p>Robust & mature test strategy</p>
-            <p>Targeting 1,000,000+ devices</p>
-            <p>Failure not an option</p>
-        </section>
-
-        <section class="slide">
-            <h3 class="send">Other areas can also benefit</h3>
-            <p>Web sites</p>
-            <p>Mobile apps</p>
-            <p>The question isn't whether or not you need to harden your site / apps...</p>
-            <h3>It's "How much hardening do you need?"</h3>
-        </section>
-
-        <section class="slide">
-            <h3 style="color:orange" class="send">This isn't easy</h3>
-            <img src="img/difficult.jpg" />
-        </section>
-
-        <section class="slide">
-            <h3 style="color:orange" class="send">Unless less your standards are low</h3>
-            <img src="img/immature.jpg" />
-        </section>
-
-        <section class="slide">
-            <h3 style="color:orange" class="send">Challenges</h3>
-            <p>Practices - foreign to most web developers</p>
-            <p>Platforms - maturing but not quite there yet</p>
-            <p>Libraries - completely clueless</p>
-            <p>Tools - focused on spot debugging</p>
-        </section>
-
-        <section class="slide">
-            <h3 style="color:orange" class="send">To harden you must test</h3>
-            <p>A robust test discipline is critical.</p>
-            <img src="img/lab.jpeg" />
-        </section>
-
-        <section class="slide">
-            <h3 class="send">Types of testing</h3>
-            <p>“Long term stability” testing</p>
-            <p>“Stress” testing</p>
-            <p>“Soak” testing</p>
-        </section>
-
-        <section class="slide-group">
-            <section class="slide" data-option="master">
-                <h3 style="color:orange" class="send">Do hardening test strategies interest you?</h3>
-            </section>
-            <section class="slide" data-option="Yes">
-                <div class="send">Yes</div>
-            </section>
-            <section class="slide" data-option="Some">
-                <div class="send">Some</div>
-            </section>
-        </section>
-
-
-            <section class="slide">
-                <h3 class="send">What are we trying to find?</h3>
-                <p>Performance degradation (Inconsistency, Sluggishness)</p>
-                <p>Abnormal behavior</p>
-                <p>Unhandled exceptions</p>
-                <p>Data handling</p>
-                <p>Lost functionality</p>
-                <p>Reboots / browser resets</p>
-                <p>Corrupt state</p>
-            </section>
-
-
-
-            <section class="slide">
-                <h3 class="send">Test discipline</h3>
-                <p>Ensure clean environment before each test</p>
-                <p>Reset cookies and local storage</p>
-                <p>Restart browser and device</p>
-                <p>Test result database: By device, By build</p>
-                <p>Statistics matter for performance measurements</p>
-                <p>7+ samples (min, max, mean)</p>
-                <p>Comparable data sets</p>
-                <p>Comparable run-time environments</p>
-                <p>Comparable server-side environment</p>
-                <p>Comparable network environment</p>
-
-            </section>
-
-
-
-            <section class="slide">
-                <h3 class="send">Long-term stability testing</h3>
-                <p>Purpose: Simulate normal usage over an extended period of time over a large number of instances</p>
-                <p># of units: as many as possible (50+ units)</p>
-                <p>Methodology: Normal usage scenarios run continuously over a period of 1-2 days</p>
-                <p>Target: No noticeable degradation</p>
-            </section>
-
-
-            <section class="slide">
-                <h3 class="send">Stress testing</h3>
-                <p>Purpose: Simulate a long run-time by accelerating the usage time</p>
-                <p># of units: as many as possible (50+)</p>
-                <p>Methodology: Automated scripts with a key/click rate as fast as possible --> 1 day test can simulate 15-30 days of usage</p>
-                <p>Target: No noticeable degradation</p>
-            </section>
-
-
-
-            <section class="slide">
-                <h3 class="send">Soak testing</h3>
-                <p>Purpose: Find latent bugs that only show up over days or weeks</p>
-                <p># of units: small(er) number (10-20)</p>
-                <p>Methodology: Well-defined set of tests run once or twice a day for as many days as possible</p>
-                <p>Target: 30 days uptime with no degradation in functionality or performance</p>
-            </section>
-
-
-
-
-            <section class="slide">
-                <h3 class="send">Tools</h3>
-                <p>Test environments</p>
-                <p>Test automation tools</p>
-                <p>Know your browser</p>
-                <p>Brute-force debugging techniques</p>
-            </section>
-
-
-
-            <section class="slide">
-                <h3 class="send">Test environments</h3>
-                <p>Racks of physical hardware</p>
-                <p>Amazon AWS</p>
-                <p>Multiple browser instances</p>
-            </section>
-
-        <section class="slide">
-            <h3 class="send">Test automation tools</h3>
-            <p>Proprietary</p>
-            <p>IR blasters</p>
-            <p>Help me out - what do you use?</p>
-        </section>
-
-        <section class="slide-group">
-            <section class="slide" data-option="master">
-                <h3 class="send">Know your web engine tools</h3>
-                <p>WebKit Web Inspector</p>
-                <p>Chrome Debugger</p>
-                <p>GC collector stats</p>
-                <p>Memory stats</p>
-                <p>DOM tree stats</p>
-                <p>Firebug</p>
-                <p>Console logs</p>
-                <p>Etc.</p>
-                <p>Challenge: Figure out how to automate data collection across large # of instances!</p>
-            </section>
-        </section>
-
-
-        <section class="slide-group">
-            <section class="slide" data-option="master">
-                <h3 class="send">Test your web engine memory behavior</h3>
-                <p>Garbage collector memory pressure</p>
-                <p>Hard upper limit? GC bogs down</p>
-                <p>No upper limit? Unexpected memory growth</p>
-                <p>Cache memory pressure</p>
-                <p>Graphics cache</p>
-            </section>
-        </section>
-
-        <section class="slide-group">
-            <section class="slide" data-option="master">
-                <h3 class="send">Strategies for handling JavaScript bugs</h3>
-                <p>Fix them (duh) - Brute force</p>
-                <p>You’ll miss some bugs (duh) - Resilient application architecture(s)</p>
-            </section>
-        </section>
-
-            <section class="slide">
-                <h3 class="send">Typical JavaScript bugs</h3>
-                <p>DOM leaks</p>
-                <p>Timer storms</p>
-                <p>Dangling callbacks</p>
-                <p>Exceptions</p>
-                <p>Beware of your libraries!</p>
-            </section>
-
-        <section class="slide-group">
-            <section class="slide" data-option="master">
-                <h3 class="send">Brute force debugging techniques</h3>
-                <p>DOM leaks - Walk DOM tree, dump # to console</p>
-                <p>Timer storms - Wrap all timer calls with helpers you can instrument later</p>
-                <p>Dangling callbacks - Wrapper for all callbacks</p>
-                <p>Exceptions - window.onerror(), automatic iframe reset</p>
-            </section>
-        </section>
-
-        <section class="slide-group">
-            <section class="slide" data-option="master">
-                <h3 class="send">Native Platform Application Management</h3>
-                <p>Automatically kills an app that is misbehaving</p>
-                <p>CPU hog</p>
-                <p>Memory hog</p>
-                <p>Automatically restart an app that is mission-critical</p>
-                <p>App prioritization</p>
-                <p>Sand-boxing</p>
-                <p>Process separation</p>
-                <p>Storage separation (cookies, IndexDB, web storage)</p>
-            </section>
-        </section>
-
-        <section class="slide-group">
-            <section class="slide" data-option="master">
-                <h3 class="send">Native Platform Application Management – Limitations</h3>
-                <p>Not always available</p>
-                <p>No help for problems in big apps (173K lines of JavaScript)</p>
-            </section>
-        </section>
-
-        <section class="slide-group">
-            <section class="slide" data-option="master">
-                <h3 style="color:orange" class="send">How many lines of JavaScript are in your web apps?</h3>
-            </section>
-            <section class="slide" data-option="0-49K">
-                <div class="send">
-                    0-49K
-                </div>
-            </section>
-            <section class="slide" data-option="50K+">
-                <div class="send">
-                    50K+
-                </div>
-            </section>
-        </section>
-
-        <section class="slide-group">
-            <section class="slide" data-option="master">
-                <h3 class="send">Resilient HTML5 Application Architecture</h3>
-            </section>
-        </section>
-
-        <section class="slide-group">
-            <section class="slide" data-option="master">
-                <h3 style="color:orange" class="send">Who's familiar with the iframe sandbox option (new in HTML5)?</h3>
-            </section>
-
-            <section class="slide" data-option="Yes">
-                <div class="send">
-                    Yes
-                </div>
-            </section>
-            <section class="slide" data-option="No">
-                <div class="send">
-                    No
-                </div>
-            </section>
-        </section>
-
-        <section class="slide-group">
-            <section class="slide" data-option="master">
-                <h3 class="send">iframe sandbox overview</h3>
-                <p><a target="_blank" href="http://www.w3schools.com/tags/tag_iframe.asp">W3 Schools</a></p>
-                <p><a target="_blank" href="http://www.html5rocks.com/en/tutorials/security/sandboxed-iframes/">HTML5 Rocks!</a></p>
-                <p>Designed to protect you from others...but why not from yourself?</p>
-            </section>
-        </section>
-
-        <section class="slide-group">
-            <section class="slide" data-option="master">
-                <h3 class="send">Pattern #1: iframe bootstrap</h3>
-                <p>Okay to restart whole app</p>
-                <p>Native app framework does not support automatic restart</p>
-            </section>
-        </section>
-
-        <section class="slide-group">
-            <section class="slide" data-option="master">
-                <h3 class="send">Pattern #1: iframe bootstrap</h3>
-                <p>Small amount of management code in root page</p>
-                <p>Whole app wrapped in iframe</p>
-                <p>Delete / re-create iframe when app misbehavior detected</p>
-            </section>
-        </section>
-
-        <section class="slide-group">
-            <section class="slide" data-option="master">
-                <h3 class="send">Pattern #2: Multiple iframe sandboxes</h3>
-                <p>Not okay to restart whole app</p>
-                <p>Very large apps</p>
-                <p>High data / network usage on start-up</p>
-                <p>More resilient user experience</p>
-                <p>Seamless recovery from bugs with only minor user disruption</p>
-                <p>More complex</p>
-                <p>More restrictions</p>
-            </section>
-        </section>
-
-        <section class="slide-group">
-            <section class="slide" data-option="master">
-                <h3 class="send">Pattern #2: Multiple iframe sandboxes</h3>
-                <p>Core management logic in root page</p>
-                <p>Segment different parts of your app into "micro-apps"</p>
-                <p>Each micro-app wrapped in iframe</p>
-                <p>Communication between root page and micro-apps via postMessage()</p>
-                <p>Most micro-apps started / stopped on-demand</p>
-                <p>Some micro-apps run longer – restart when misbehavior detected</p>
-            </section>
-        </section>
-
-        <section class="slide-group">
-            <section class="slide" data-option="master">
-                <h3 class="send">Pattern #2: Multiple iframe sandboxes - limitations</h3>
-                <p>Duplicate files loaded into each iframe</p>
-                <p>Extra work to proxy communication across iframe boundaries</p>
-            </section>
-        </section>
-
-        <section class="slide-group">
-            <section class="slide" data-option="master">
-                <h3 class="send">PureMVC iFrameMediator</h3>
-                <p>With a little work your libraries can be iframe sandbox friendly!</p>
-                <p>Credits: Aaron Gascoigne</p>
-                <img src="img/Aaron_Gascoigne.JPG" />
-                <h3 class="send">iframe example: basic usage</h3>
-            </section>
-        </section>
-
-        <section class="slide-group">
-            <section class="slide" data-option="master">
-                <h3 class="send">Conclusions</h3>
-                <p>Test the heck out of your apps</p>
-                <p>Use iframe sandboxes as your safety net</p>
-                <br/>
-                <p>Code and presentations on GitHub</p>
-                <p><a target="_blank" href="https://github.com/jpullen/html5-hardened">https://github.com/jpullen/html5-hardened</a></p>
-            </section>
-        </section>
-
-        <!--
-        <section class="slide-group">
-
-            <section>
-                <p><a target="_blank" href="http://onslyde.com/analytics.html">You can view the analytics for this session</a></p>
-                <p>You can use other features (like Roulette) for random giveaways or to choose an audience member</p>
-                <a href="javascript:onslyde.slides.roulette();void(0)">Pick a winner</a>
-            </section>
-
-        </section>
-        <section class="slide-group">
-
-            <section>
-                <h3>Add more content to this presentation...</h3>
-                <p>Save this page to your computer.</p>
-                <p>Click File->Save Page As (make sure you select the Webpage, HTML only menu option)</p>
-            </section>
-
-        </section>
-        -->
-
-    </div>
+<div class="address">
+    <h4 style="text-transform: lowercase;">connect now <span style="color:#13daec;">http://onslyde.com/go/<span id="sessionID"></span></span></h4>
+</div>
+<!-- Any section element inside of this container is displayed as a slide -->
+<div class="slides">
+
+<section class="slide-group">
+    <section>
+        <h2 class="send">HTML5 applications that run (almost) forever</h2>
+        <h3><a href="http://twitter.com/jeremypullen">Twitter: @jeremypullen</a></h3>
+    </section>
+</section>
+
+<section class="slide-group">
+    <section class="slide" data-option="master">
+        <h3 style="color:orange" class="send">What type of environment do you develop for the most?</h3>
+    </section>
+    <section class="slide" data-option="Apps">
+        <div class="send">
+            Apps
+        </div>
+    </section>
+    <section class="slide" data-option="Web">
+        <div class="send">
+            Web
+        </div>
+    </section>
+</section>
+
+<section class="slide-group">
+    <section class="slide" data-option="master">
+        <h3 style="color:orange" class="send">How long do you expect your HTML5 app or web page to run?</h3>
+    </section>
+    <section class="slide" data-option="1 day">
+        <div class="send">1 day</div>
+    </section>
+    <section class="slide" data-option="More">
+        <div class="send">More</div>
+    </section>
+</section>
+
+<section class="slide-group">
+    <section class="slide" data-option="master">
+        <h3 style="color:orange" class="send">How often do you want to manually restart your TV or an app on your mobile phone?</h3>
+    </section>
+
+    <section class="slide" data-option="Never">
+        <div class="send">
+            <p>Never: Uptime of 30+ days</p>
+            <p>Expected to be self-healing (auto-restart on failure)</p>
+        </div>
+    </section>
+
+    <section class="slide" data-option="Occasionally">
+        <div class="send">
+            Seriously?
+        </div>
+    </section>
+</section>
+
+<section class="slide-group">
+
+
+<section class="slide">
+    <h3 class="send">Many embedded devices have HTML5 at their core!</h3>
+    <img src="img/9800_multi-screen-1.jpg" />
+    <p>Where's the HTML5?</p>
+</section>
+
+<section class="slide">
+    <h3 class="send">On the TV!</h3>
+    <p>This is all HTML/CSS/JavaScript.</p>
+    <p>Many mobile apps are also hybrid native / HTML5.</p>
+    <img src="img/RTN_Capture3_large.jpg" />
+</section>
+
+<section class="slide">
+    <h3 class="send">Unique things about hybrid HTML5 environments</h3>
+    <p>HTML & JS hosted locally on device</p>
+    <p>Native plug-ins for many operations</p>
+    <p>Network operations relegated to background</p>
+    <p>Web engine built into the app / device (typically WebKit)</p>
+    <p>More control</p>
+    <p>Able to customize</p>
+</section>
+
+<section class="slide">
+    <h3 class="send">Core hardening practices haven't changed</h3>
+    <p>Robust & mature test strategy</p>
+    <p>Targeting 1,000,000+ devices</p>
+    <p>Failure not an option</p>
+</section>
+
+<section class="slide">
+    <h3 class="send">Other areas can also benefit</h3>
+    <p>Web sites</p>
+    <p>Mobile apps</p>
+    <p>The question isn't whether or not you need to harden your site / apps...</p>
+    <h3>It's "How much hardening do you need?"</h3>
+</section>
+
+<section class="slide">
+    <h3 style="color:orange" class="send">This isn't easy</h3>
+    <img src="img/difficult.jpg" />
+</section>
+
+<section class="slide">
+    <h3 style="color:orange" class="send">Unless less your standards are low</h3>
+    <img src="img/immature.jpg" />
+</section>
+
+<section class="slide">
+    <h3 style="color:orange" class="send">Challenges</h3>
+    <p>Practices - foreign to most web developers</p>
+    <p>Platforms - maturing but not quite there yet</p>
+    <p>Libraries - completely clueless</p>
+    <p>Tools - focused on spot debugging</p>
+</section>
+
+<section class="slide">
+    <h3 style="color:orange" class="send">To harden you must test</h3>
+    <p>A robust test discipline is critical.</p>
+    <img src="img/lab.jpeg" />
+</section>
+
+<section class="slide">
+    <h3 class="send">Types of testing</h3>
+    <p>“Long term stability” testing</p>
+    <p>“Stress” testing</p>
+    <p>“Soak” testing</p>
+</section>
+
+</section>
+
+<section class="slide-group">
+    <section class="slide" data-option="master">
+        <h3 style="color:orange" class="send">Do hardening test strategies interest you?</h3>
+    </section>
+    <section class="slide" data-option="Yes">
+        <div class="send">Yes</div>
+    </section>
+    <section class="slide" data-option="Some">
+        <div class="send">Some</div>
+    </section>
+</section>
+
+
+<section class="slide-group">
+
+<section class="slide">
+    <h3 class="send">What are we trying to find?</h3>
+    <p>Performance degradation (Inconsistency, Sluggishness)</p>
+    <p>Abnormal behavior</p>
+    <p>Unhandled exceptions</p>
+    <p>Data handling</p>
+    <p>Lost functionality</p>
+    <p>Reboots / browser resets</p>
+    <p>Corrupt state</p>
+</section>
+
+
+
+<section class="slide">
+    <h3 class="send">Test discipline</h3>
+    <p>Ensure clean environment before each test</p>
+    <p>Reset cookies and local storage</p>
+    <p>Restart browser and device</p>
+    <p>Test result database: By device, By build</p>
+    <p>Statistics matter for performance measurements</p>
+    <p>7+ samples (min, max, mean)</p>
+    <p>Comparable data sets</p>
+    <p>Comparable run-time environments</p>
+    <p>Comparable server-side environment</p>
+    <p>Comparable network environment</p>
+
+</section>
+
+
+
+<section class="slide">
+    <h3 class="send">Long-term stability testing</h3>
+    <p>Purpose: Simulate normal usage over an extended period of time over a large number of instances</p>
+    <p># of units: as many as possible (50+ units)</p>
+    <p>Methodology: Normal usage scenarios run continuously over a period of 1-2 days</p>
+    <p>Target: No noticeable degradation</p>
+</section>
+
+
+<section class="slide">
+    <h3 class="send">Stress testing</h3>
+    <p>Purpose: Simulate a long run-time by accelerating the usage time</p>
+    <p># of units: as many as possible (50+)</p>
+    <p>Methodology: Automated scripts with a key/click rate as fast as possible --> 1 day test can simulate 15-30 days of usage</p>
+    <p>Target: No noticeable degradation</p>
+</section>
+
+
+
+<section class="slide">
+    <h3 class="send">Soak testing</h3>
+    <p>Purpose: Find latent bugs that only show up over days or weeks</p>
+    <p># of units: small(er) number (10-20)</p>
+    <p>Methodology: Well-defined set of tests run once or twice a day for as many days as possible</p>
+    <p>Target: 30 days uptime with no degradation in functionality or performance</p>
+</section>
+
+
+
+
+<section class="slide">
+    <h3 class="send">Tools</h3>
+    <p>Test environments</p>
+    <p>Test automation tools</p>
+    <p>Know your browser</p>
+    <p>Brute-force debugging techniques</p>
+</section>
+
+
+
+<section class="slide">
+    <h3 class="send">Test environments</h3>
+    <p>Racks of physical hardware</p>
+    <p>Amazon AWS</p>
+    <p>Multiple browser instances</p>
+</section>
+
+<section class="slide">
+    <h3 class="send">Test automation tools</h3>
+    <p>Proprietary</p>
+    <p>IR blasters</p>
+    <p>Help me out - what do you use?</p>
+</section>
+
+</section>
+
+<section class="slide-group">
+    <section class="slide">
+        <h3 class="send">Know your web engine tools</h3>
+        <p>WebKit Web Inspector</p>
+        <p>Chrome Debugger</p>
+        <p>GC collector stats</p>
+        <p>Memory stats</p>
+        <p>DOM tree stats</p>
+        <p>Firebug</p>
+        <p>Console logs</p>
+        <p>Etc.</p>
+        <p>Challenge: Figure out how to automate data collection across large # of instances!</p>
+    </section>
+</section>
+
+
+<section class="slide-group">
+    <section class="slide" >
+        <h3 class="send">Test your web engine memory behavior</h3>
+        <p>Garbage collector memory pressure</p>
+        <p>Hard upper limit? GC bogs down</p>
+        <p>No upper limit? Unexpected memory growth</p>
+        <p>Cache memory pressure</p>
+        <p>Graphics cache</p>
+    </section>
+</section>
+
+<section class="slide-group">
+    <section class="slide" >
+        <h3 class="send">Strategies for handling JavaScript bugs</h3>
+        <p>Fix them (duh) - Brute force</p>
+        <p>You’ll miss some bugs (duh) - Resilient application architecture(s)</p>
+    </section>
+</section>
+
+<section class="slide-group">
+
+<section class="slide">
+    <h3 class="send">Typical JavaScript bugs</h3>
+    <p>DOM leaks</p>
+    <p>Timer storms</p>
+    <p>Dangling callbacks</p>
+    <p>Exceptions</p>
+    <p>Beware of your libraries!</p>
+</section>
+
+    </section>
+
+<section class="slide-group">
+    <section class="slide" >
+        <h3 class="send">Brute force debugging techniques</h3>
+        <p>DOM leaks - Walk DOM tree, dump # to console</p>
+        <p>Timer storms - Wrap all timer calls with helpers you can instrument later</p>
+        <p>Dangling callbacks - Wrapper for all callbacks</p>
+        <p>Exceptions - window.onerror(), automatic iframe reset</p>
+    </section>
+</section>
+
+<section class="slide-group">
+    <section class="slide" >
+        <h3 class="send">Native Platform Application Management</h3>
+        <p>Automatically kills an app that is misbehaving</p>
+        <p>CPU hog</p>
+        <p>Memory hog</p>
+        <p>Automatically restart an app that is mission-critical</p>
+        <p>App prioritization</p>
+        <p>Sand-boxing</p>
+        <p>Process separation</p>
+        <p>Storage separation (cookies, IndexDB, web storage)</p>
+    </section>
+</section>
+
+<section class="slide-group">
+    <section class="slide" >
+        <h3 class="send">Native Platform Application Management – Limitations</h3>
+        <p>Not always available</p>
+        <p>No help for problems in big apps (173K lines of JavaScript)</p>
+    </section>
+</section>
+
+<section class="slide-group">
+    <section class="slide" >
+        <h3 style="color:orange" class="send">How many lines of JavaScript are in your web apps?</h3>
+    </section>
+    <section class="slide" data-option="0-49K">
+        <div class="send">
+            0-49K
+        </div>
+    </section>
+    <section class="slide" data-option="50K+">
+        <div class="send">
+            50K+
+        </div>
+    </section>
+</section>
+
+<section class="slide-group">
+    <section class="slide" >
+        <h3 class="send">Resilient HTML5 Application Architecture</h3>
+    </section>
+</section>
+
+<section class="slide-group">
+    <section class="slide" >
+        <h3 style="color:orange" class="send">Who's familiar with the iframe sandbox option (new in HTML5)?</h3>
+    </section>
+
+    <section class="slide" data-option="Yes">
+        <div class="send">
+            Yes
+        </div>
+    </section>
+    <section class="slide" data-option="No">
+        <div class="send">
+            No
+        </div>
+    </section>
+</section>
+
+<section class="slide-group">
+    <section class="slide" >
+        <h3 class="send">iframe sandbox overview</h3>
+        <p><a target="_blank" href="http://www.w3schools.com/tags/tag_iframe.asp">W3 Schools</a></p>
+        <p><a target="_blank" href="http://www.html5rocks.com/en/tutorials/security/sandboxed-iframes/">HTML5 Rocks!</a></p>
+        <p>Designed to protect you from others...but why not from yourself?</p>
+    </section>
+</section>
+
+<section class="slide-group">
+    <section class="slide" >
+        <h3 class="send">Pattern #1: iframe bootstrap</h3>
+        <p>Okay to restart whole app</p>
+        <p>Native app framework does not support automatic restart</p>
+    </section>
+</section>
+
+<section class="slide-group">
+    <section class="slide" >
+        <h3 class="send">Pattern #1: iframe bootstrap</h3>
+        <p>Small amount of management code in root page</p>
+        <p>Whole app wrapped in iframe</p>
+        <p>Delete / re-create iframe when app misbehavior detected</p>
+    </section>
+</section>
+
+<section class="slide-group">
+    <section class="slide" >
+        <h3 class="send">Pattern #2: Multiple iframe sandboxes</h3>
+        <p>Not okay to restart whole app</p>
+        <p>Very large apps</p>
+        <p>High data / network usage on start-up</p>
+        <p>More resilient user experience</p>
+        <p>Seamless recovery from bugs with only minor user disruption</p>
+        <p>More complex</p>
+        <p>More restrictions</p>
+    </section>
+</section>
+
+<section class="slide-group">
+    <section class="slide" >
+        <h3 class="send">Pattern #2: Multiple iframe sandboxes</h3>
+        <p>Core management logic in root page</p>
+        <p>Segment different parts of your app into "micro-apps"</p>
+        <p>Each micro-app wrapped in iframe</p>
+        <p>Communication between root page and micro-apps via postMessage()</p>
+        <p>Most micro-apps started / stopped on-demand</p>
+        <p>Some micro-apps run longer – restart when misbehavior detected</p>
+    </section>
+</section>
+
+<section class="slide-group">
+    <section class="slide" >
+        <h3 class="send">Pattern #2: Multiple iframe sandboxes - limitations</h3>
+        <p>Duplicate files loaded into each iframe</p>
+        <p>Extra work to proxy communication across iframe boundaries</p>
+    </section>
+</section>
+
+<section class="slide-group">
+    <section class="slide" >
+        <h3 class="send">PureMVC iFrameMediator</h3>
+        <p>With a little work your libraries can be iframe sandbox friendly!</p>
+        <p>Credits: Aaron Gascoigne</p>
+        <img src="img/Aaron_Gascoigne.JPG" />
+        <h3 class="send">iframe example: basic usage</h3>
+    </section>
+</section>
+
+<section class="slide-group">
+    <section class="slide" >
+        <h3 class="send">Conclusions</h3>
+        <p>Test the heck out of your apps</p>
+        <p>Use iframe sandboxes as your safety net</p>
+        <br/>
+        <p>Code and presentations on GitHub</p>
+        <p><a target="_blank" href="https://github.com/jpullen/html5-hardened">https://github.com/jpullen/html5-hardened</a></p>
+    </section>
+</section>
+
+<!--
+<section class="slide-group">
+
+    <section>
+        <p><a target="_blank" href="http://onslyde.com/analytics.html">You can view the analytics for this session</a></p>
+        <p>You can use other features (like Roulette) for random giveaways or to choose an audience member</p>
+        <a href="javascript:onslyde.slides.roulette();void(0)">Pick a winner</a>
+    </section>
+
+</section>
+<section class="slide-group">
+
+    <section>
+        <h3>Add more content to this presentation...</h3>
+        <p>Save this page to your computer.</p>
+        <p>Click File->Save Page As (make sure you select the Webpage, HTML only menu option)</p>
+    </section>
+
+</section>
+-->
+
+</div>
 
 
 </div>
