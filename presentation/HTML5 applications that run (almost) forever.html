@@ -112,7 +112,7 @@
             </section>
         </section>
 
-
+        <section class="slide-group">
         <section class="slide">
             <h3 class="send">Many embedded devices have HTML5 at their core!</h3>
             <img src="img/9800_multi-screen-1.jpg" />
@@ -181,7 +181,8 @@
             <p>“Stress” testing</p>
             <p>“Soak” testing</p>
         </section>
-
+        </section>
+        
         <section class="slide-group">
             <section class="slide" data-option="master">
                 <h3 style="color:orange" class="send">Do hardening test strategies interest you?</h3>
@@ -194,7 +195,7 @@
             </section>
         </section>
 
-
+        <section class="slide-group">
             <section class="slide">
                 <h3 class="send">What are we trying to find?</h3>
                 <p>Performance degradation (Inconsistency, Sluggishness)</p>
@@ -278,9 +279,11 @@
             <p>IR blasters</p>
             <p>Help me out - what do you use?</p>
         </section>
+        
+        </section>
 
         <section class="slide-group">
-            <section class="slide" data-option="master">
+            <section class="slide" >
                 <h3 class="send">Know your web engine tools</h3>
                 <p>WebKit Web Inspector</p>
                 <p>Chrome Debugger</p>
@@ -292,11 +295,8 @@
                 <p>Etc.</p>
                 <p>Challenge: Figure out how to automate data collection across large # of instances!</p>
             </section>
-        </section>
-
-
-        <section class="slide-group">
-            <section class="slide" data-option="master">
+        
+            <section class="slide" >
                 <h3 class="send">Test your web engine memory behavior</h3>
                 <p>Garbage collector memory pressure</p>
                 <p>Hard upper limit? GC bogs down</p>
@@ -304,16 +304,13 @@
                 <p>Cache memory pressure</p>
                 <p>Graphics cache</p>
             </section>
-        </section>
-
-        <section class="slide-group">
-            <section class="slide" data-option="master">
+       
+            <section class="slide" >
                 <h3 class="send">Strategies for handling JavaScript bugs</h3>
                 <p>Fix them (duh) - Brute force</p>
                 <p>You’ll miss some bugs (duh) - Resilient application architecture(s)</p>
             </section>
-        </section>
-
+      
             <section class="slide">
                 <h3 class="send">Typical JavaScript bugs</h3>
                 <p>DOM leaks</p>
@@ -323,18 +320,16 @@
                 <p>Beware of your libraries!</p>
             </section>
 
-        <section class="slide-group">
-            <section class="slide" data-option="master">
+       
+            <section class="slide" >
                 <h3 class="send">Brute force debugging techniques</h3>
                 <p>DOM leaks - Walk DOM tree, dump # to console</p>
                 <p>Timer storms - Wrap all timer calls with helpers you can instrument later</p>
                 <p>Dangling callbacks - Wrapper for all callbacks</p>
                 <p>Exceptions - window.onerror(), automatic iframe reset</p>
             </section>
-        </section>
-
-        <section class="slide-group">
-            <section class="slide" data-option="master">
+        
+            <section class="slide" >
                 <h3 class="send">Native Platform Application Management</h3>
                 <p>Automatically kills an app that is misbehaving</p>
                 <p>CPU hog</p>
@@ -345,10 +340,8 @@
                 <p>Process separation</p>
                 <p>Storage separation (cookies, IndexDB, web storage)</p>
             </section>
-        </section>
-
-        <section class="slide-group">
-            <section class="slide" data-option="master">
+        
+            <section class="slide" >
                 <h3 class="send">Native Platform Application Management – Limitations</h3>
                 <p>Not always available</p>
                 <p>No help for problems in big apps (173K lines of JavaScript)</p>
@@ -372,7 +365,7 @@
         </section>
 
         <section class="slide-group">
-            <section class="slide" data-option="master">
+            <section class="slide">
                 <h3 class="send">Resilient HTML5 Application Architecture</h3>
             </section>
         </section>
@@ -395,33 +388,27 @@
         </section>
 
         <section class="slide-group">
-            <section class="slide" data-option="master">
+            <section class="slide">
                 <h3 class="send">iframe sandbox overview</h3>
                 <p><a target="_blank" href="http://www.w3schools.com/tags/tag_iframe.asp">W3 Schools</a></p>
                 <p><a target="_blank" href="http://www.html5rocks.com/en/tutorials/security/sandboxed-iframes/">HTML5 Rocks!</a></p>
                 <p>Designed to protect you from others...but why not from yourself?</p>
             </section>
-        </section>
-
-        <section class="slide-group">
-            <section class="slide" data-option="master">
+        
+            <section class="slide" >
                 <h3 class="send">Pattern #1: iframe bootstrap</h3>
                 <p>Okay to restart whole app</p>
                 <p>Native app framework does not support automatic restart</p>
             </section>
-        </section>
-
-        <section class="slide-group">
-            <section class="slide" data-option="master">
+       
+            <section class="slide">
                 <h3 class="send">Pattern #1: iframe bootstrap</h3>
                 <p>Small amount of management code in root page</p>
                 <p>Whole app wrapped in iframe</p>
                 <p>Delete / re-create iframe when app misbehavior detected</p>
             </section>
-        </section>
-
-        <section class="slide-group">
-            <section class="slide" data-option="master">
+        
+            <section class="slide" >
                 <h3 class="send">Pattern #2: Multiple iframe sandboxes</h3>
                 <p>Not okay to restart whole app</p>
                 <p>Very large apps</p>
@@ -431,10 +418,8 @@
                 <p>More complex</p>
                 <p>More restrictions</p>
             </section>
-        </section>
-
-        <section class="slide-group">
-            <section class="slide" data-option="master">
+        
+            <section class="slide" >
                 <h3 class="send">Pattern #2: Multiple iframe sandboxes</h3>
                 <p>Core management logic in root page</p>
                 <p>Segment different parts of your app into "micro-apps"</p>
@@ -443,28 +428,22 @@
                 <p>Most micro-apps started / stopped on-demand</p>
                 <p>Some micro-apps run longer – restart when misbehavior detected</p>
             </section>
-        </section>
-
-        <section class="slide-group">
-            <section class="slide" data-option="master">
+        
+            <section class="slide">
                 <h3 class="send">Pattern #2: Multiple iframe sandboxes - limitations</h3>
                 <p>Duplicate files loaded into each iframe</p>
                 <p>Extra work to proxy communication across iframe boundaries</p>
             </section>
-        </section>
-
-        <section class="slide-group">
-            <section class="slide" data-option="master">
+        
+            <section class="slide" >
                 <h3 class="send">PureMVC iFrameMediator</h3>
                 <p>With a little work your libraries can be iframe sandbox friendly!</p>
                 <p>Credits: Aaron Gascoigne</p>
                 <img src="img/Aaron_Gascoigne.JPG" />
                 <h3 class="send">iframe example: basic usage</h3>
             </section>
-        </section>
-
-        <section class="slide-group">
-            <section class="slide" data-option="master">
+        
+            <section class="slide">
                 <h3 class="send">Conclusions</h3>
                 <p>Test the heck out of your apps</p>
                 <p>Use iframe sandboxes as your safety net</p>
